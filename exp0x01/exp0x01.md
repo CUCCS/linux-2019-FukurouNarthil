@@ -130,9 +130,7 @@ sudo apt install genisoimage
 
 ### 4、结果
 
-- 无人值守iso镜像安装录屏
-
-![](img/无人值守iso镜像安装.gif)
+- [无人值守iso镜像安装录屏](https://www.bilibili.com/video/av46323839/)
 
 ## 文件对比
 
