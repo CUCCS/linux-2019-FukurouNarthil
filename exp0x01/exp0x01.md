@@ -24,7 +24,7 @@
 
 - 使用`2yy`+`p`+`cw`命令修改文件，添加第二块网卡，结果如下：
 
-![](img/01.png)
+![](img/netplan.png)
 
 - `wq!`强制保存退出
 
@@ -32,7 +32,7 @@
 
 - `ifconfig`查看结果：
 
-![](img/02.png)
+![](img/ifconfig.png)
 
 ### 2、ssh配置
 
@@ -42,9 +42,9 @@
 
 ### 3、iso镜像生成
 
-- `wget`直接从教学网站的`ftp\iso`里down下来
+- `wget`直接从教学网站的`ftp/iso`里down下来
 
-  ![](img/03.jpg)
+  ![](img/down_iso.jpg)
 
 ```
 # 在当前用户目录下创建一个用于挂载iso的文件目录。
@@ -72,7 +72,7 @@ label autoinstall
 
 - 保存后检查一下：`cat isolinux/txt.cfg`
 
-![](img/04.png)
+![](img/cfg.png)
 
 - 配置seed文件
 
@@ -81,11 +81,11 @@ label autoinstall
   - 可能会出现remote open(路径名): Permission Denied的情况，目标路径没有写权限，此时回到虚拟机，通过`sudo chmod -R 775 目标路径`开放写权限即可
   - 传输完成结果
 
-  ![](img/05.png)
+  ![](img/sftp.png)
 
 - 修改`isolinux/isolinux.cfg`：
 
-  ![](img/06.png)
+  ![](img/timeout.png)
 
 - 重新生成md5sum.txt：
 
@@ -119,7 +119,7 @@ sudo apt install genisoimage
 
 - 执行`sudo bash shell`
 
-  ![](img/07.png)
+  ![](img/bash.png)
 
 - 宿主机通过pscp.exe从虚拟机下载custom.iso镜像
 
@@ -138,23 +138,23 @@ sudo apt install genisoimage
 
 - 使用的软件是meld
 
-![](img/08.png)
+![](img/meld01.png)
 
-![09](img/09.png)
+![09](img/meld02.png)
 
-![10](img/10.png)
+![10](img/meld03.png)
 
-![11](img/11.png)
+![11](img/meld04.png)
 
-![12](img/12.png)
+![12](img/meld05.png)
 
-![13](img/13.jpg)
+![13](img/meld06.jpg)
 
-![14](img/14.png)
+![14](img/meld07.png)
 
-![15](img/15.png)
+![15](img/meld08.png)
 
-![16](img/16.png)
+![16](img/meld09.png)
 
 ## 遇到的问题
 
@@ -162,7 +162,7 @@ sudo apt install genisoimage
 
 2. 配置seed文件的时候踩了一个很大的坑，一开始是直接用`wget https://github.com/c4pr1c3/LinuxSysAdmin/blob/master/exp/chap0x01/cd-rom/preseed/ubuntu-server-autoinstall.seed `指令从网上下载seed文件，但是下载下来的文件实际上是个html文件，导致无人值守安装的过程报错
 
-   ![](img/17.png)
+   ![](img/error.png)
 
    这导致我反复做了4次本实验，一直以为是配置txt.cfg文件的时候出现的问题
 
