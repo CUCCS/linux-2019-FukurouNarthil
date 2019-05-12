@@ -9,9 +9,27 @@ before_install:
     - tar --xz -xvf shellcheck-"${scversion}".linux.x86_64.tar.xz
     - sudo cp shellcheck-"${scversion}"/shellcheck /usr/bin/
     - /usr/bin/shellcheck --version
+    - sudo apt install p7zip-full
+    - wget http://sec.cuc.edu.cn/huangwei/course/LinuxSysAdmin/exp/chap0x04/web_log.tsv.7z
+    - 7z x -oexp0x04/shell web_log.tsv.7z
 
 script:
-  - bash test.sh
+  - bash exp0x04/shell/pic.sh ../images -h
+  - bash exp0x04/shell/pic.sh ../images -c watermark.png
+  - bash exp0x04/shell/pic.sh ../images -C 50%
+  - bash exp0x04/shell/pic.sh ../images -w xxx
+  - bash exp0x04/shell/pic.sh ../images -p www
+  - bash exp0x04/shell/pic.sh ../images -s yyy
+  - bash exp0x04/shell/pic.sh ../images -t
+
+  - bash exp0x04/shell/player.sh
+  - bash exp0x04/shell/webanalyze.sh h
+  - bash exp0x04/shell/webanalyze.sh 1
+  - bash exp0x04/shell/webanalyze.sh 2
+  - bash exp0x04/shell/webanalyze.sh 3
+  - bash exp0x04/shell/webanalyze.sh 4
+  - bash exp0x04/shell/webanalyze.sh 5
+  - bash exp0x04/shell/webanalyze.sh /shuttle
 
 after_script:
   - /usr/bin/shellcheck test.sh
