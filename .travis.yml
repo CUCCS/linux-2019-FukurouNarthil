@@ -12,17 +12,21 @@ before_install:
     - sudo apt install p7zip-full
     - wget http://sec.cuc.edu.cn/huangwei/course/LinuxSysAdmin/exp/chap0x04/web_log.tsv.7z
     - 7z x -oexp04 web_log.tsv.7z
-    - cd exp0x04/shell
+    - cp exp0x04/shell/playser.sh play.sh
+    - cp exp0x04/shell/webanalyze.sh webanalyze.sh
+    - mkdir workspace
+    - cp -a exp0x04/images/. workspace
+    - cp exp0x04/shell/pic.sh workspace
 
 script:
   - bash test.sh
-  - bash pic.sh -h
-  - bash pic.sh -c
-  - bash pic.sh -C
-  - bash pic.sh -w xxx
-  - bash pic.sh -p www
-  - bash pic.sh -s yyy
-  - bash pic.sh -t
+  - bash /workspace/pic.sh -h
+  - bash /workspace/pic.sh -c
+  - bash /workspace/pic.sh -C
+  - bash /workspace/pic.sh -w xxx
+  - bash /workspace/pic.sh -p www
+  - bash /workspace/pic.sh -s yyy
+  - bash /workspace/pic.sh -t
 
   - bash player.sh
   - bash webanalyze.sh h
