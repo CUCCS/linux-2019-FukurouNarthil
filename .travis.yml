@@ -9,10 +9,29 @@ before_install:
     - tar --xz -xvf shellcheck-"${scversion}".linux.x86_64.tar.xz
     - sudo cp shellcheck-"${scversion}"/shellcheck /usr/bin/
     - /usr/bin/shellcheck --version
+    - sudo apt install p7zip-full
+    - wget http://sec.cuc.edu.cn/huangwei/course/LinuxSysAdmin/exp/chap0x04/web_log.tsv.7z
+    - 7z x -oexp04 web_log.tsv.7z  
 
 script:
   - bash test.sh
+  - bash pic.sh -h
+  - bash pic.sh -c
+  - bash pic.sh -C
+  - bash pic.sh -w xxx
+  - bash pic.sh -p www
+  - bash pic.sh -s yyy
+  - bash pic.sh -t
 
+  - bash player.sh
+  - bash webanalyze.sh h
+  - bash webanalyze.sh 1
+  - bash webanalyze.sh 2
+  - bash webanalyze.sh 3
+  - bash webanalyze.sh 4
+  - bash webanalyze.sh 5
+  - bash webanalyze.sh /shuttle
+  
 after_script:
   - /usr/bin/shellcheck test.sh
 
