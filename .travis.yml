@@ -13,8 +13,6 @@ before_install:
     - wget http://sec.cuc.edu.cn/huangwei/course/LinuxSysAdmin/exp/chap0x04/web_log.tsv.7z
     - 7z x -oexp0x04/shell web_log.tsv.7z
 
-install: travis_wait 30 mvn install
-
 script:
   - bash exp0x04/images/pic.sh ./ -h
   - bash exp0x04/images/pic.sh ./ -c
