@@ -13,11 +13,7 @@ before_install:
     - /usr/bin/shellcheck --version
     - sudo apt install p7zip-full
     - wget http://sec.cuc.edu.cn/huangwei/course/LinuxSysAdmin/exp/chap0x04/web_log.tsv.7z
-    - 7z x -oexp04 web_log.tsv.7z
-    - cp exp0x04/shell/playser.sh workspace/player.sh
-    - cp exp0x04/shell/webanalyze.sh workspace/webanalyze.sh
-    - cp -a exp0x04/images/. workspace/
-    - cp exp0x04/shell/pic.sh workspace/pic.shS
+    - 7z x -oexp0x04 web_log.tsv.7z
 
 script:
   - bash test.sh
