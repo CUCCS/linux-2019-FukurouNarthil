@@ -11,7 +11,8 @@ before_install:
     - /usr/bin/shellcheck --version
     - sudo apt install p7zip-full
     - wget http://sec.cuc.edu.cn/huangwei/course/LinuxSysAdmin/exp/chap0x04/web_log.tsv.7z
-    - 7z x -oexp04 web_log.tsv.7z  
+    - 7z x -oexp04 web_log.tsv.7z
+    - cd exp0x04/shell
 
 script:
   - bash test.sh
@@ -31,7 +32,7 @@ script:
   - bash webanalyze.sh 4
   - bash webanalyze.sh 5
   - bash webanalyze.sh /shuttle
-  
+
 after_script:
   - /usr/bin/shellcheck test.sh
 
